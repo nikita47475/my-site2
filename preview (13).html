@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Поддержка</title>
+
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+
+  <style>
+    body {
+      background: #111;
+      color: white;
+      font-family: Arial;
+      text-align: center;
+      margin-top: 120px;
+    }
+
+    #supportBox {
+      display: none;
+      margin-top: 20px;
+    }
+
+    #loginBox {
+      display: block;
+    }
+
+    button {
+      padding: 12px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      border: none;
+      border-radius: 8px;
+    }
+
+    #writeBtn {
+      margin-top: 20px;
+      background: #4caf50;
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+
+<h1>Поддержка</h1>
+
+<p>Войдите через Google, чтобы продолжить</p>
+
+<div id="loginBox">
+  <div id="g_id_onload"
+       data-client_id="1092101383564-esh60orv9blj12fgbcutk754o25uo670.apps.googleusercontent.com"
+       data-callback="onLogin">
+  </div>
+
+  <div class="g_id_signin"></div>
+</div>
+
+<div id="supportBox">
+  <h2>Вход успешный ✔</h2>
+
+  <button id="writeBtn" onclick="openSupport()">
+    Открыть поддержку
+  </button>
+</div>
+
+<script>
+function onLogin(response) {
+    document.getElementById("loginBox").style.display = "none";
+    document.getElementById("supportBox").style.display = "block";
+}
+
+function openSupport() {
+    const url = "https://sites.google.com/view/mini-game-company-47475/%D0%BF%D1%96%D0%B4%D1%82%D1%80%D0%B8%D0%BC%D0%BA%D0%B0#h.g4dsc0wxv8uz";
+
+    // СТАБИЛЬНОЕ ОТКРЫТИЕ (без .com и блокировок)
+    window.location.href = url;
+}
+</script>
+
+</body>
+</html>
