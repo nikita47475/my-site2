@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Поддержка</title>
+
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+
+  <style>
+    body {
+      background: #111;
+      color: white;
+      font-family: Arial;
+      text-align: center;
+      margin-top: 120px;
+    }
+
+    #supportBox {
+      display: none;
+      margin-top: 20px;
+    }
+
+    #loginBox {
+      display: block;
+    }
+
+    button {
+      padding: 12px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      border: none;
+      border-radius: 8px;
+    }
+
+    #writeBtn {
+      margin-top: 20px;
+      background: #4caf50;
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+
+<h1>Поддержка</h1>
+
+<p>Чтобы обратиться в поддержку, нужно войти через Google</p>
+
+<div id="loginBox">
+  <div id="g_id_onload"
+       data-client_id="1092101383564-esh60orv9blj12fgbcutk754o25uo670.apps.googleusercontent.com"
+       data-callback="onLogin">
+  </div>
+
+  <div class="g_id_signin"></div>
+</div>
+
+<div id="supportBox">
+  <h2>Вход успешный ✔</h2>
+
+  <button id="writeBtn" onclick="openSupport()">
+    Написать в поддержку
+  </button>
+</div>
+
+<script>
+function onLogin(response) {
+    // вход прошёл
+    document.getElementById("loginBox").style.display = "none";
+    document.getElementById("supportBox").style.display = "block";
+}
+
+function openSupport() {
+    // сюда вставь свою ссылку поддержки
+    window.open("https://example.com", "_blank");
+}
+</script>
+
+</body>
+</html>
